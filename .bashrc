@@ -33,9 +33,6 @@ export LDFLAGS="-lstdc++ -lm"
 # Fast cd command : https://github.com/wting/autojump
 source "/usr/share/autojump/autojump.bash"
 
-# Productive prompt : https://starship.rs/
-eval "$(starship init bash)"
-
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 j() {
