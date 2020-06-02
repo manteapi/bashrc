@@ -26,15 +26,18 @@ if ! shopt -oq posix; then
 fi
 
 # Anatoscope custom settings
-eval "$(register-python-argcomplete3 deployment)"
-export PATH=/usr/lib/ccache:$PATH
+eval "$(register-python-argcomplete deployment)"
+export PATH=/usr/lib/ccache/bin:$PATH
 export LDFLAGS="-lstdc++ -lm"
 
-# Fast cd command : https://github.com/wting/autojump
-source "/usr/share/autojump/autojump.bash"
+[[ -s /home/pierre-luc/.autojump/etc/profile.d/autojump.sh ]] && source /home/pierre-luc/.autojump/etc/profile.d/autojump.sh
+
+# Productive prompt : https://starship.rs/
+eval "$(starship init bash)"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
+#Autojump + fzf
 j() {
     if [[ "$#" -ne 0 ]]; then
         cd $(autojump $@)
