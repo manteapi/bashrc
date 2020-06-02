@@ -32,6 +32,8 @@ export LDFLAGS="-lstdc++ -lm"
 
 [[ -s /home/pierre-luc/.autojump/etc/profile.d/autojump.sh ]] && source /home/pierre-luc/.autojump/etc/profile.d/autojump.sh
 
+source /usr/share/git/completion/git-completion.bash
+
 # Productive prompt : https://starship.rs/
 eval "$(starship init bash)"
 
