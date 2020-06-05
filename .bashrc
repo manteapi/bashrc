@@ -38,6 +38,8 @@ source /usr/share/git/completion/git-completion.bash
 eval "$(starship init bash)"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+source /usr/share/fzf/key-bindings.bash
+source /usr/share/fzf/completion.bash
 
 #Autojump + fzf
 j() {
