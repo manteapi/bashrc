@@ -37,6 +37,7 @@ source /usr/share/git/completion/git-completion.bash
 # Productive prompt : https://starship.rs/
 eval "$(starship init bash)"
 
+export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 source /usr/share/fzf/key-bindings.bash
 source /usr/share/fzf/completion.bash
