@@ -25,6 +25,9 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# Gitlab api auto-completion
+eval "$(register-python-argcomplete gitlab)"
+
 # Anatoscope custom settings
 eval "$(register-python-argcomplete deployment)"
 export PATH=/usr/lib/ccache/bin:$PATH
