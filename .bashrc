@@ -33,6 +33,9 @@ eval "$(register-python-argcomplete deployment)"
 export PATH=/usr/lib/ccache/bin:$PATH
 export LDFLAGS="-lstdc++ -lm"
 
+# Asan
+export ASAN_OPTIONS=abort_on_error=1:detect_leaks=0:detect_odr_violation=0
+
 [[ -s /home/pierre-luc/.autojump/etc/profile.d/autojump.sh ]] && source /home/pierre-luc/.autojump/etc/profile.d/autojump.sh
 
 source /usr/share/git/completion/git-completion.bash
