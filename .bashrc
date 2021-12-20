@@ -25,26 +25,11 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# Anatoscope custom settings
-eval "$(register-python-argcomplete3 deployment)"
 export PATH=/usr/lib/ccache:$PATH
 export LDFLAGS="-lstdc++ -lm"
 
-# Fast cd command : https://github.com/wting/autojump
-source "/usr/share/autojump/autojump.bash"
-
 # Productive prompt : https://starship.rs/
 eval "$(starship init bash)"
-
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
-
-j() {
-    if [[ "$#" -ne 0 ]]; then
-        cd $(autojump $@)
-        return
-    fi
-    cd "$(autojump -s | sort -k1gr | awk '$1 ~ /[0-9]:/ && $2 ~ /^\// { for (i=2; i<=NF; i++) { print $(i) } }' |  fzf --height 40% --reverse --inline-info)"
-}
 
 # Zoxide requirements
 eval "$(zoxide init bash)"
